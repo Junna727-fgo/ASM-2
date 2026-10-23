@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlus Shop - Quản Trị Hệ Thống (CRUD)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="admin-page">
+    <div class="promo-bar">✨ HỆ THỐNG QUẢN TRỊ ATLUS SHOP - ADMIN PANEL ✨</div>
+    <header class="glass-header" id="site-header"></header>
+
+    <main class="container" style="margin-top: 35px;">
+        <h2 style="font-size:26px; font-weight:800; margin-bottom:20px;">⚙️ BẢNG ĐIỀU KHIỂN QUẢN TRỊ (ADMIN CRUD)</h2>
+
+        <!-- Thanh chuyển Tab Quản trị -->
+        <div class="admin-nav">
+            <button class="cat-tab-btn active" id="tab-btn-products">📦 CRUD Sản Phẩm</button>
+            <button class="cat-tab-btn" id="tab-btn-categories">🗂️ CRUD Danh Mục</button>
+            <button class="cat-tab-btn" id="tab-btn-orders">🧾 Quản Lý Đơn Hàng</button>
+        </div>
+
+        <!-- TAB 1: CRUD SẢN PHẨM -->
+        <section id="admin-sec-products">
+            <div class="admin-panel-box">
+                <h3 style="margin-bottom:15px;" id="prod-form-heading">➕ Thêm Sản Phẩm Mới</h3>
+                <div class="admin-form-grid">
+                    <div class="form-group">
+                        <label>Tên sản phẩm *</label>
+                        <input type="text" id="adm-prod-name" class="form-control" placeholder="Nhập tên sản phẩm (tối thiểu 3 ký tự)">
+                        <span id="err-adm-prod-name" class="error-text"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Giá bán (VNĐ) *</label>
+                        <input type="number" id="adm-prod-price" class="form-control" placeholder="VD: 650000">
+                        <span id="err-adm-prod-price" class="error-text"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Danh mục *</label>
+                        <select id="adm-prod-cat" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Đường dẫn hình ảnh *</label>
+                        <input type="text" id="adm-prod-img" class="form-control" placeholder="VD: anh/aigis.jpeg">
+                        <span id="err-adm-prod-img" class="error-text"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả chi tiết *</label>
+                    <input type="text" id="adm-prod-desc" class="form-control" placeholder="Nhập mô tả sản phẩm (tối thiểu 5 ký tự)">
+                    <span id="err-adm-prod-desc" class="error-text"></span>
+                </div>
+                <div style="display:flex; gap:10px; margin-top:8px;">
+                    <button class="btn-card-add" id="btn-save-product" style="padding:10px 22px; font-size:13.5px;">💾 THÊM SẢN PHẨM (PUSH)</button>
+                    <button class="btn-action btn-delete" id="btn-cancel-product" style="display:none;">Hủy sửa</button>
+                </div>
+            </div>
+
+            <div class="admin-panel-box" style="overflow-x:auto;">
+                <h3>📋 Danh Sách Sản Phẩm Hiện Có</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr><th>ID</th><th>Hình</th><th>Tên sản phẩm</th><th>Danh mục</th><th>Giá tiền</th><th>Thao tác (Sửa / Xóa)</th></tr>
+                    </thead>
+                    <tbody id="admin-product-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TAB 2: CRUD DANH MỤC -->
+        <section id="admin-sec-categories" style="display:none;">
+            <div class="admin-panel-box">
+                <h3 style="margin-bottom:15px;" id="cat-form-heading">➕ Thêm Danh Mục Mới</h3>
+                <div class="admin-form-grid">
+                    <div class="form-group">
+                        <label>Mã danh mục (ID) *</label>
+                        <input type="text" id="adm-cat-id" class="form-control" placeholder="VD: p6, figure...">
+                        <span id="err-adm-cat-id" class="error-text"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Tên danh mục *</label>
+                        <input type="text" id="adm-cat-name" class="form-control" placeholder="VD: Persona 6">
+                        <span id="err-adm-cat-name" class="error-text"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Slogan / Mô tả *</label>
+                        <input type="text" id="adm-cat-slogan" class="form-control" placeholder="VD: New Era of Persona.">
+                        <span id="err-adm-cat-slogan" class="error-text"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Ảnh đại diện danh mục *</label>
+                        <input type="text" id="adm-cat-img" class="form-control" placeholder="VD: anh/P3Reload.jpg">
+                        <span id="err-adm-cat-img" class="error-text"></span>
+                    </div>
+                </div>
+                <div style="display:flex; gap:10px; margin-top:8px;">
+                    <button class="btn-card-add" id="btn-save-category" style="padding:10px 22px; font-size:13.5px;">💾 THÊM DANH MỤC (PUSH)</button>
+                    <button class="btn-action btn-delete" id="btn-cancel-category" style="display:none;">Hủy sửa</button>
+                </div>
+            </div>
+
+            <div class="admin-panel-box" style="overflow-x:auto;">
+                <h3>🗂️ Danh Sách Danh Mục</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr><th>Mã ID</th><th>Ảnh</th><th>Tên danh mục</th><th>Slogan</th><th>Số SP</th><th>Thao tác (Sửa / Xóa)</th></tr>
+                    </thead>
+                    <tbody id="admin-category-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TAB 3: QUẢN LÝ ĐƠN HÀNG (*) -->
+        <section id="admin-sec-orders" style="display:none;">
+            <div class="admin-panel-box" style="overflow-x:auto;">
+                <h3>🧾 Quản Lý Tất Cả Đơn Hàng</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr><th>Mã Đơn</th><th>Khách hàng & SĐT</th><th>Địa chỉ giao</th><th>Ngày đặt</th><th>Tổng tiền</th><th>Trạng thái đơn</th><th>Xóa</th></tr>
+                    </thead>
+                    <tbody id="admin-order-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script type="module" src="./admin.js"></script>
+</body>
+</html>

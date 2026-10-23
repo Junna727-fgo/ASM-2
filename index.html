@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlus Shop - Trang Chủ (ASM 2)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="home-page">
+    <div class="promo-bar">✨ FROM THE STAR LIGHT - PERSONA THE SERIES | MIỄN PHÍ VẬN CHUYỂN ĐƠN TỪ 1.000.000₫ ✨</div>
+    <header class="glass-header" id="site-header"></header>
+
+    <main>
+        <!-- SLIDER BANNER (LAB 8.1) VỚI KHUNG HÌNH LỚN & 4 TAB: PERSONA THE SERIES, P3, P4, P5 -->
+        <div class="hero-banner">
+            <div class="uiverse-midnight-sky">
+                <div class="sky-canvas">
+                    <div class="stars stars-1"></div>
+                    <div class="stars stars-2"></div>
+                    <div class="stars stars-3"></div>
+                    <div class="meteor m1"></div>
+                    <div class="meteor m2"></div>
+                    <div class="meteor m3"></div>
+                    <div class="moon"></div>
+                </div>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-text-col">
+                    <span class="hero-badge" id="banner-badge">PERSONA THE SERIES</span>
+                    <h1 id="banner-title">BỘ SƯU TẬP CAO CẤP PERSONA</h1>
+                    <p id="banner-desc">Khám phá trọn bộ thế giới Persona từ Dark Hour, Midnight Channel đến Phantom Thieves qua những ấn phẩm độc quyền.</p>
+                    <div class="btn-group">
+                        <a href="catalog.html?cat=all" class="btn-primary" id="banner-btn">KHÁM PHÁ BỘ SƯU TẬP</a>
+                    </div>
+                </div>
+                <div class="hero-img-col">
+                    <img id="banner-img" src="anh/P3Reload.jpg" alt="Persona Banner" onerror="this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800'">
+                </div>
+            </div>
+
+            <!-- Thanh nút chuyển đổi Persona The Series | P3 | P4 | P5 -->
+            <div class="slider-controls">
+                <button class="slider-btn" id="prev-slide-btn">❮</button>
+                <div id="slider-dots-box" style="display:flex; gap:8px;"></div>
+                <button class="slider-btn" id="next-slide-btn">❯</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">CHỌN THEO VŨ TRỤ (DANH MỤC)</h2>
+            <div class="collection-grid" id="home-categories"></div>
+
+            <h2 class="section-title">SẢN PHẨM NỔI BẬT</h2>
+            <div class="product-grid" id="home-featured-products"></div>
+        </div>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script type="module" src="./product.js"></script>
+</body>
+</html>

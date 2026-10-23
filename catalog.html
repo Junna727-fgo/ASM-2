@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlus Shop - Danh Mục Sản Phẩm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="catalog-page">
+    <div class="promo-bar">✨ FROM THE STAR LIGHT - PERSONA THE SERIES ✨</div>
+    <header class="glass-header" id="site-header"></header>
+
+    <main class="container" style="margin-top: 35px;">
+        <h2 id="catalog-heading" style="font-size: 28px; font-weight: 800; margin-bottom: 20px;">Tất Cả Sản Phẩm</h2>
+
+        <div class="controls-bar">
+            <!-- Nút lọc danh mục render từ mảng categories -->
+            <div class="cat-tabs" id="catalog-cat-tabs"></div>
+
+            <!-- Tìm kiếm & Sắp xếp giá -->
+            <div class="search-sort-box">
+                <input type="text" id="search-input" class="search-input" placeholder="🔍 Tìm tên sản phẩm...">
+                <select id="sort-select">
+                    <option value="none">Sắp xếp: Mặc định</option>
+                    <option value="asc">Giá: Thấp tới Cao</option>
+                    <option value="desc">Giá: Cao tới Thấp</option>
+                </select>
+            </div>
+        </div>
+
+        <p id="product-count" style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px; font-weight: 600;"></p>
+        <div class="product-grid" id="catalog-grid"></div>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script type="module" src="./product.js"></script>
+</body>
+</html>

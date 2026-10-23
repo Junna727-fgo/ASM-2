@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlus Shop - Chi Tiết Sản Phẩm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="detail-page">
+    <div class="promo-bar">✨ FROM THE STAR LIGHT - PERSONA THE SERIES ✨</div>
+    <header class="glass-header" id="site-header"></header>
+
+    <main class="container">
+        <div style="margin: 25px 0 10px; font-size:13.5px; color:var(--text-muted);">
+            <a href="index.html">Trang chủ</a> / 
+            <a href="catalog.html" id="detail-breadcrumb-cat">Danh mục</a> / 
+            <strong style="color:#111;" id="detail-breadcrumb-name">Chi tiết</strong>
+        </div>
+
+        <div class="detail-layout">
+            <div class="detail-gallery">
+                <img id="detail-img" src="anh/aigis.jpeg" alt="Product Image">
+            </div>
+            <div class="detail-info">
+                <span class="cat-tag" id="detail-cat-badge" style="position:static; width:fit-content; margin-bottom:12px;">PERSONA</span>
+                <h1 class="detail-title" id="detail-title">Tên sản phẩm</h1>
+                <div class="detail-price" id="detail-price">0 ₫</div>
+                <div class="detail-desc" id="detail-desc">Mô tả sản phẩm</div>
+
+                <div style="display:flex; gap:15px;">
+                    <button class="btn-add-to-cart" id="btn-detail-add" style="flex:1;">🛒 THÊM VÀO GIỎ HÀNG</button>
+                    <button class="btn-add-to-cart" id="btn-detail-buy" style="flex:1; background:var(--p3-color);">⚡ MUA NGAY</button>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="font-size:22px; font-weight:800; margin: 50px 0 20px;">SẢN PHẨM CÙNG DANH MỤC</h3>
+        <div class="product-grid" id="related-grid"></div>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script type="module" src="./product.js"></script>
+</body>
+</html>

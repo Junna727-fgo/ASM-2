@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlus Shop - Giỏ Hàng & Đơn Hàng</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="cart-page">
+    <div class="promo-bar">✨ FROM THE STAR LIGHT - PERSONA THE SERIES ✨</div>
+    <header class="glass-header" id="site-header"></header>
+
+    <main class="container" style="margin-top: 30px;">
+        <!-- KHU VỰC 1: GIỎ HÀNG & THANH TOÁN -->
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <h2 style="font-size:26px; font-weight:800;">🛒 GIỎ HÀNG & ĐẶT HÀNG</h2>
+            <button class="btn-action btn-delete" id="btn-clear-cart">🗑️ Xóa toàn bộ giỏ</button>
+        </div>
+
+        <div id="empty-cart-box" style="display:none; text-align:center; padding: 50px 0; border: 1px solid #eaeaea; border-radius: 12px; background: #f9fafb; margin-bottom: 40px;">
+            <h3 style="margin-bottom:10px;">Giỏ hàng của bạn đang trống</h3>
+            <p style="color:var(--text-muted); margin-bottom: 20px;">Hãy tiếp tục khám phá các bộ sưu tập Persona độc quyền.</p>
+            <a href="catalog.html" class="btn-primary" style="background:#111; color:#fff; display:inline-block;">MUA SẮM NGAY</a>
+        </div>
+
+        <div class="cart-layout" id="cart-main-layout">
+            <div class="cart-items" id="cart-items-list"></div>
+
+            <!-- Form Đặt Hàng tích hợp Check Form Lab 8.2 -->
+            <div class="cart-summary">
+                <h3 style="font-size:19px; margin-bottom: 16px;">Thông Tin Giao Hàng</h3>
+
+                <div class="form-group">
+                    <label>Họ và tên người nhận *</label>
+                    <input type="text" id="order-name" class="form-control" placeholder="Nhập họ và tên (3 - 50 ký tự)">
+                    <span id="err-order-name" class="error-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Email nhận hóa đơn *</label>
+                    <input type="text" id="order-email" class="form-control" placeholder="VD: khachhang@gmail.com">
+                    <span id="err-order-email" class="error-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Số điện thoại *</label>
+                    <input type="text" id="order-phone" class="form-control" placeholder="10 chữ số (bắt đầu bằng 0)">
+                    <span id="err-order-phone" class="error-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Địa chỉ nhận hàng *</label>
+                    <input type="text" id="order-address" class="form-control" placeholder="Số nhà, đường, phường/xã, quận/huyện">
+                    <span id="err-order-address" class="error-text"></span>
+                </div>
+
+                <div class="summary-row" style="margin-top:15px;">
+                    <span>Tạm tính:</span>
+                    <strong id="summary-subtotal">0 ₫</strong>
+                </div>
+                <div class="summary-row">
+                    <span>Phí giao hàng:</span>
+                    <strong id="summary-shipping">0 ₫</strong>
+                </div>
+                <div class="summary-total">
+                    <span>TỔNG CỘNG:</span>
+                    <span style="color:var(--p5-color);" id="summary-total">0 ₫</span>
+                </div>
+
+                <button class="btn-checkout" id="btn-submit-order">TIẾN HÀNH ĐẶT HÀNG</button>
+            </div>
+        </div>
+
+        <!-- KHU VỰC 2: LỊCH SỬ ĐƠN HÀNG (*) -->
+        <hr style="margin: 55px 0 35px; border: none; border-top: 2px dashed #e2e8f0;">
+        <section id="order-history">
+            <h2 style="font-size:26px; font-weight:800; margin-bottom:20px;">📦 LỊCH SỬ ĐƠN HÀNG CỦA BẠN</h2>
+            <div id="order-history-list"></div>
+        </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script type="module" src="./cart.js"></script>
+</body>
+</html>

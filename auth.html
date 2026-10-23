@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlus Shop - Đăng Nhập, Đăng Ký & Liên Hệ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="auth-page">
+    <div class="promo-bar">✨ FROM THE STAR LIGHT - PERSONA THE SERIES ✨</div>
+    <header class="glass-header" id="site-header"></header>
+
+    <main class="container">
+        <div class="auth-box" style="max-width: 500px;">
+            <!-- Thanh chuyển đổi 3 Form: Đăng nhập | Đăng ký | Liên hệ (Đáp ứng đủ Lab 8.2) -->
+            <div class="auth-header">
+                <div class="auth-tab active" id="tab-login">ĐĂNG NHẬP</div>
+                <div class="auth-tab" id="tab-register">ĐĂNG KÝ</div>
+                <div class="auth-tab" id="tab-contact">LIÊN HỆ</div>
+            </div>
+
+            <!-- 1. FORM ĐĂNG NHẬP -->
+            <div id="form-login-box">
+                <div class="form-group">
+                    <label>Email đăng nhập *</label>
+                    <input type="text" id="login-email" class="form-control" placeholder="VD: admin@gmail.com">
+                    <span id="err-login-email" class="error-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu *</label>
+                    <input type="password" id="login-pass" class="form-control" placeholder="Nhập mật khẩu (tối thiểu 6 ký tự)">
+                    <span id="err-login-pass" class="error-text"></span>
+                </div>
+                <button class="btn-checkout" id="btn-login-submit">ĐĂNG NHẬP VÀO HỆ THỐNG</button>
+
+                <div style="margin-top:18px; padding:12px; background:#f8fafc; border-radius:8px; font-size:12.5px; color:#444;">
+                    <strong>🔑 Tài khoản mẫu có sẵn:</strong><br>
+                    • Admin: <code>admin@gmail.com</code> | MK: <code>123456</code><br>
+                    • Khách: <code>khachhang@gmail.com</code> | MK: <code>123456</code>
+                </div>
+            </div>
+
+            <!-- 2. FORM ĐĂNG KÝ -->
+            <div id="form-register-box" style="display: none;">
+                <div class="form-group">
+                    <label>Họ và tên *</label>
+                    <input type="text" id="reg-name" class="form-control" placeholder="Từ 3 đến 40 ký tự">
+                    <span id="err-reg-name" class="error-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="text" id="reg-email" class="form-control" placeholder="VD: tenban@gmail.com">
+                    <span id="err-reg-email" class="error-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Số điện thoại *</label>
+                    <input type="text" id="reg-phone" class="form-control" placeholder="10 chữ số (bắt đầu bằng số 0)">
+                    <span id="err-reg-phone" class="error-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu *</label>
+                    <input type="password" id="reg-pass" class="form-control" placeholder="Từ 6 đến 20 ký tự">
+                    <span id="err-reg-pass" class="error-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Xác nhận lại mật khẩu *</label>
+                    <input type="password" id="reg-repass" class="form-control" placeholder="Nhập lại mật khẩu phía trên">
+                    <span id="err-reg-repass" class="error-text"></span>
+                </div>
+                <button class="btn-checkout" id="btn-register-submit">TẠO TÀI KHOẢN MỚI</button>
+            </div>
+
+            <!-- 3. FORM LIÊN HỆ (LAB 8.2) -->
+            <div id="form-contact-box" style="display: none;">
+                <div class="form-group">
+                    <label>Họ và tên người gửi *</label>
+                    <input type="text" id="contact-name" class="form-control" placeholder="Từ 3 đến 50 ký tự">
+                    <span id="err-contact-name" class="error-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Email liên hệ *</label>
+                    <input type="text" id="contact-email" class="form-control" placeholder="VD: makoto@gmail.com">
+                    <span id="err-contact-email" class="error-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Số điện thoại *</label>
+                    <input type="text" id="contact-phone" class="form-control" placeholder="10 chữ số (bắt đầu bằng số 0)">
+                    <span id="err-contact-phone" class="error-text"></span>
+                </div>
+                <div class="form-group">
+                    <label>Nội dung liên hệ *</label>
+                    <textarea id="contact-msg" class="form-control" rows="4" placeholder="Nhập nội dung (tối thiểu 10 ký tự)..."></textarea>
+                    <span id="err-contact-msg" class="error-text"></span>
+                </div>
+                <button class="btn-checkout" id="btn-contact-submit">GỬI THÔNG TIN LIÊN HỆ</button>
+            </div>
+        </div>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script type="module" src="./auth.js"></script>
+</body>
+</html>
